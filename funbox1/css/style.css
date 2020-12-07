@@ -1,0 +1,260 @@
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.page {
+  font-family: 'Exo2';
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #000;
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgba(0, 0, 0, 0.5)), color-stop(50%, transparent), to(rgba(0, 0, 0, 0.5))), url(/img/background-pattern.png);
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0, transparent 50%, rgba(0, 0, 0, 0.5)), url(/img/background-pattern.png);
+  min-height: 100vh;
+}
+
+.main {
+  width: 100%;
+  max-width: 1120px;
+  font-family: Exo2;
+  color: #fff;
+}
+
+.main-header {
+  margin-bottom: 25px;
+  font-size: 36px;
+  text-align: center;
+  text-shadow: 0 1px 0 #000;
+}
+
+.main-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+}
+
+.main__product {
+  margin: 0 10px 25px;
+  max-width: 320px;
+}
+
+.product__input {
+  display: none;
+}
+
+.product__input:checked ~ .product__text_info {
+  display: block;
+}
+
+.product__input:checked ~ .product__text_buy {
+  display: none !important;
+}
+
+.product__card {
+  margin-bottom: 15px;
+}
+
+.product__text {
+  font-family: "Trebuchet MS";
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 16px;
+  text-align: center;
+  text-shadow: 0 1px 0 #000;
+  color: #fff;
+}
+
+.product__text_info {
+  display: none;
+}
+
+.product__text_disabled {
+  color: #ff6;
+}
+
+.product__text label {
+  font-weight: 700;
+  cursor: pointer;
+  color: #1698d9;
+  border-bottom: 1px dashed #1698d9;
+}
+
+.card {
+  position: relative;
+  padding: 24px 50px 50px;
+  display: block;
+  width: 320px;
+  height: 480px;
+  font-family: Trebuchet MS;
+  color: #000;
+  background-image: url(../img/cat.png), linear-gradient(135deg, transparent 5%, #f2f2f2 0);
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  border-radius: 0 10px 10px 10px;
+}
+
+.card_disabled {
+  cursor: default;
+  color: #b3b3b3;
+  background-image: linear-gradient(135deg, transparent 5%, rgba(242, 242, 242, 0.5) 0), url(../img/cat.png), linear-gradient(135deg, transparent 5%, #f2f2f2 0);
+}
+
+.card_disabled.card .card__weight {
+  background-color: #b3b3b3;
+}
+
+.card_disabled.card .card__slogan, .card_disabled.card .card__description {
+  color: inherit;
+}
+
+.card_disabled.card::before {
+  background-image: linear-gradient(135deg, transparent 5%, #b3b3b3 0);
+}
+
+.card_enabled {
+  cursor: pointer;
+}
+
+.card_enabled:hover.card::before {
+  background-image: linear-gradient(135deg, transparent 5%, #37afeb 0);
+}
+
+.card_enabled:hover.card .card__weight {
+  background-color: #37afeb;
+}
+
+.card_selected.card .card__weight {
+  background-color: #d91667 !important;
+}
+
+.card_selected.card::before {
+  background-image: linear-gradient(135deg, transparent 5%, #d91667 0) !important;
+}
+
+.card_selected_hover.card::before {
+  background-image: linear-gradient(135deg, transparent 5%, #eb3782 0) !important;
+}
+
+.card_selected_hover.card .card__weight {
+  background-color: #eb3782 !important;
+}
+
+.card_selected_hover.card .card__slogan {
+  display: none;
+}
+
+.card_selected_hover.card .card__question {
+  display: block;
+}
+
+.card::before {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  -webkit-transform: scale(1.02, 1.015);
+          transform: scale(1.02, 1.015);
+  background-image: linear-gradient(135deg, transparent 5%, #1698d9 0);
+  border-radius: 0 10px 10px 10px;
+}
+
+.card__slogan {
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  color: #666;
+}
+
+.card__question {
+  display: none;
+  color: #e52d7a;
+}
+
+.card__title {
+  margin-top: 15px;
+  margin-bottom: 3px;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.card__subtitle {
+  margin-bottom: 15px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.card__description {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #666;
+}
+
+.card__description span {
+  font-weight: 700;
+}
+
+.card__weight {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 80px;
+  height: 80px;
+  font-size: 21px;
+  font-weight: 400;
+  color: #fff;
+  background-color: #1698d9;
+  border-radius: 50%;
+}
+
+.card__weight span {
+  font-size: 42px;
+}
+
+@font-face {
+  font-family: 'Exo2';
+  src: url("../fonts/Exo2.0-Thin.eot"), url("../fonts/Exo2.0-Thin.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: auto;
+}
+/*# sourceMappingURL=style.css.map */
